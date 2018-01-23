@@ -16,5 +16,11 @@ namespace Scaler
             RegistryKey rkey = Registry.CurrentUser.CreateSubKey(@"Software\Microsoft\Windows\CurrentVersion\Run");
             rkey.SetValue("Scaler", value: "\"" + codebase + "\"");
         }
+
+        public void Unregister()
+        {
+            RegistryKey rkey = Registry.CurrentUser.CreateSubKey(@"Software\Microsoft\Windows\CurrentVersion\Run");
+            rkey.DeleteValue("Scaler");
+        }
     }
 }

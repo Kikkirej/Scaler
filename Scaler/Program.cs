@@ -31,6 +31,7 @@ namespace Scaler
                 else if (args[0].Equals("disable"))
                 {
                     new Scaler().DisableScale();
+                    new Autostarter().Unregister();
                     return;
                 }
                 else if (args[0].Equals("count"))

@@ -73,8 +73,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Autostarter.cs" />
+    <Compile Include="CountCheck.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scaler.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

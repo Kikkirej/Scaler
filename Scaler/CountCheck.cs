@@ -27,7 +27,7 @@ namespace Scaler
             Object currentCount = key.GetValue("count");
             if (currentCount == null)
             {
-                return null;
+                return 0;
             }
             int count;
             if(Int32.TryParse(currentCount.ToString(), out count))

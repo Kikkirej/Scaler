@@ -14,6 +14,7 @@ namespace Scaler
         {
         
             int newScale = 480;
+            CountCheck countCheck= new CountCheck();
             if (args.Length > 0)
             {
                 if (args[0].Equals("help"))
@@ -24,7 +25,7 @@ namespace Scaler
                     Console.WriteLine("150%: 144");
                     Console.WriteLine("Hilfsdialog: help");
                     Console.WriteLine("Deaktivieren: disable");
-                    Console.WriteLine("ScalerCount: count <number>");
+                    Console.WriteLine("ScalerCount (10): count");
                     return;
                 }
                 else if (args[0].Equals("disable"))
@@ -34,7 +35,8 @@ namespace Scaler
                 }
                 else if (args[0].Equals("count"))
                 {
-                    Console.Write("not implemented");
+                    new Autostarter().Register();
+                    new CountCheck().Init(10);
                     return;
                 }
                 else
@@ -48,6 +50,10 @@ namespace Scaler
 
                     }
                 }
+            }
+            if (countCheck.getAndDecreaseCount() > 0)
+            {
+                return;
             }
             try
             {
